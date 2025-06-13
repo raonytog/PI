@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" th:fragment="header">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h1>Bem-vindo ao Chat de PI-1</h1>
+            </div>
+        </div>
+
+        <div class="row chatbox">
+            <div class="col">
+                <div id="chat"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8"></div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">Remetente:</div>
+                    <div class="col">
+                        <input id="remetente" type="text" />
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div id="chat"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col">Mensagem:</div>
+                <div class="col">
+                    <input id="mensagem" type="text" data-bs-toggle="tooltip" data-bs-title="Digite a mensagem que quer enviar" />
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-success" onclick="enviarMensagem()" data-bs-toggle="tooltip" data-bs-title="Clique para enviar">Enviar!</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous">
+    </script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+</body>
+
+</html>
